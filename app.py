@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 import requests
 import pandas as pd
 import altair as alt
@@ -237,7 +238,7 @@ st.sidebar.divider()
 
 api_key = st.sidebar.text_input(
     "News API Key",
-    value="c0199eaefc8d42b9921cbbb57623e92d",
+    value=os.environ.get("NEWSAPI_KEY", ""),
     type="password",
     help="Enter your News API key. A working key is prefilled."
 )
